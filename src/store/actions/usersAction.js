@@ -4,7 +4,7 @@ import axios from 'axios'
 export const getUsers = () => async dispatch => {
 
     try{
-        const res = await axios.get(`http://jsonplaceholder.typicode.com/users`)
+        const res = await axios.get(`https://ti-react-test.herokuapp.com/users`)
         dispatch( {
             type: GET_USERS,
             payload: res.data
