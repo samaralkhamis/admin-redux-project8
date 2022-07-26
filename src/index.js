@@ -15,8 +15,8 @@ const initalState = { }
 const middleware = [thunk]
 const store = createStore(rootReducer, initalState, composeWithDevTools(applyMiddleware(...middleware)))
 
-export default store;
 
+export default store;
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>

@@ -15,9 +15,9 @@ class users extends Component {
         this.props.getUsers()
     }
 
-    handleButton(id){
-        
-        document.getElementById(id).style.display="none";   
+    handleButton(id) {
+
+        document.getElementById(id).style.display = "none";
     }
     render() {
         const { users } = this.props.users
@@ -25,33 +25,35 @@ class users extends Component {
         return (
             <>
                 <div className='container'>
-                    <div className="row">
+                    <div className="d-flex justify-content-center">
+                        <div className='p-2'>
                             {users.map(u =>
-                                <span key={u.id} id={u.id} style={{margin:'3rem',maxHeight:'500px'}} >
+                                <span key={u.id} id={u.id} style={{ margin: '3rem' }} >
                                     <div class="panel panel-red userlist">
-                                        <div class="panel-heading">
-                                            <a href="" class="availablity btn btn-circle btn-danger"><i class="fa fa-close"></i></a> </div>
-                                            <div class="panel-body text-center">
+                                        
+                                        <div class="panel-body text-center">
                                             <div class="userprofile">
                                                 <div class="userpic"> <img src="https://bootdey.com/img/Content/avatar/avatar6.png" alt="" class="userpicimg" /> </div>
-                                                <h3 class="username" style={{textAlign:'center'}}>{u.name}</h3>
+                                                <h5 style={{ textAlign: 'center', color: 'black' , margin:'7px' }}> Name : {u.name}</h5>
+                                                <h6>{u.occupation}</h6>
+                                                <h6 style={{ color: 'black' }}>Email : {u.email}</h6>
                                             </div>
-                                            <strong style={{padding:'10px'}}>Information</strong><br />
-                                            <p style={{padding:'10px'}}>{u.bio}<br />
-                                                {u.occupation}
+                                            
+                                            <strong style={{ padding: '10px' }}>OBJECTIVE</strong><br />
+                                            <p style={{ padding: '12px', color: 'black', textAlign: 'justify' , width:'320px' , height:'250px' }}>{u.bio}<br />
+                                                
                                                 <br />
-                                                <a href="mailto:info@maxartkiller.in">{u.email}</a></p>
-                                            <div class="socials tex-center"> <a href="" class="btn btn-circle btn-primary "><i class="fa fa-facebook"></i></a> <a href="" class="btn btn-circle btn-danger "><i class="fa fa-google-plus"></i></a> <a href="" class="btn btn-circle btn-info "><i class="fa fa-twitter"></i></a> <a href="" class="btn btn-circle btn-warning "><i class="fa fa-envelope"></i></a> </div>
+                                            </p>
                                         </div>
                                         <div class="panel-footer">
-                                            <button onClick={() => this.handleButton(u.id)} className="btn btn-danger">Delete</button>
+                                            <button onClick={() => this.handleButton(u.id)} className="btn btn-danger" style={{marginLeft:'100px'}}>Delete</button>
 
                                         </div>
                                     </div>
-                                 </span>
+                                </span>
                             )}
-                        </div>
-                    </div>
+                        </div></div>
+                </div>
             </>
         )
     }

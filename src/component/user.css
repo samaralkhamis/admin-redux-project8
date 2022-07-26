@@ -309,6 +309,6 @@
 }
 
 .progress-bar-danger, .panel-red, .status.inactive, .panel-red > .panel-heading, .btn-danger, .badge.red, .event_red {
-    color: white;
-    background-color:  rgb(96, 125, 139);
+    color: black;
+    background-color:  #eee4e7;
 }
